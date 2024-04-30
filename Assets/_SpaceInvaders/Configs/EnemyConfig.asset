@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <EnemiesInColumn>k__BackingField: {fileID: 723558696327675063, guid: fb1b1dc477c1ef94c9b1f548ba6285fa, type: 3}
   <NumberColumns>k__BackingField: 11
-  <OffsetMove>k__BackingField: 0.8
+  <OffsetHorizontalMove>k__BackingField: 0.8
+  <OffsetMoveDown>k__BackingField: 0.5
   <TimeStayInSec>k__BackingField: 0.6

@@ -27,12 +27,8 @@ namespace _SpaceInvaders.Scripts.Enemy
             => StartTimer();
 
         private void StartTimer()
-        {
-            Observable.Timer(TimeSpan.FromSeconds(_enemyConfig.TimeStayInSec)).Subscribe(_ =>
-            {
-                Move();
-            }).AddTo(_compositeDisposable);
-        }
+            => Observable.Timer(TimeSpan.FromSeconds(_enemyConfig.TimeStayInSec)).Subscribe(_ => Move())
+                .AddTo(_compositeDisposable);
 
         private void Move()
         {

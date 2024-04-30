@@ -18,12 +18,8 @@ namespace _SpaceInvaders.Scripts.Enemy
         }
 
         public void Initialize()
-        {
-            _detectingWall.DetectedWall.Subscribe(_ =>
-            {
-                _horizontalMovement.ChangeDirection();
-            }).AddTo(_compositeDisposable);
-        }
+            => _detectingWall.Detected.Subscribe(_ => _horizontalMovement.ChangeDirection())
+                .AddTo(_compositeDisposable);
 
         public void Dispose()
             => _compositeDisposable.Clear();

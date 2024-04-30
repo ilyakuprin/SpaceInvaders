@@ -267,7 +267,7 @@ Transform:
   m_GameObject: {fileID: 491511824}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.96, y: -7.2, z: 0}
+  m_LocalPosition: {x: 0, y: -7.2, z: 0}
   m_LocalScale: {x: 1.4902484, y: 0.66309655, z: 0.85937864}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 548205436}
   - component: {fileID: 548205438}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: BulletModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -518,7 +518,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.19, z: 0}
-  m_LocalScale: {x: 0.09886318, y: 0.38000003, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.38000003, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 952926276}
@@ -552,7 +552,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -807,6 +807,7 @@ GameObject:
   - component: {fileID: 908248310}
   - component: {fileID: 908248314}
   - component: {fileID: 908248315}
+  - component: {fileID: 908248316}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -847,6 +848,7 @@ MonoBehaviour:
   - {fileID: 908248310}
   - {fileID: 908248314}
   - {fileID: 908248315}
+  - {fileID: 908248316}
   _installerPrefabs: []
   _findSiblingMonoInstallers: 0
   _autoRun: 1
@@ -920,6 +922,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyView: {fileID: 1562524158}
   _enemyConfig: {fileID: 11400000, guid: 8ef8bcbce54880d47880a540627f2371, type: 2}
+--- !u!114 &908248316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908248309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f24e59ceda42fd8257eff7576aa536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rewardConfig: {fileID: 11400000, guid: 9be6ec3c62e2365438027eb81ba09573, type: 2}
 --- !u!1 &943475485
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +978,7 @@ GameObject:
   - component: {fileID: 952926276}
   - component: {fileID: 952926275}
   m_Layer: 0
-  m_Name: PivotBullet
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -984,7 +999,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -992,7 +1007,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -1315,6 +1330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Rigidbody>k__BackingField: {fileID: 952926275}
+  <Collider>k__BackingField: {fileID: 548205438}
 --- !u!114 &1562524158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1331,6 +1347,38 @@ MonoBehaviour:
   <HorizontalDistance>k__BackingField: 2
   <RightWall>k__BackingField: {fileID: 1708282833}
   <LeftWall>k__BackingField: {fileID: 792628666}
+  <Bottom>k__BackingField: {fileID: 1380507367}
+--- !u!1 &1576318160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1576318161}
+  m_Layer: 0
+  m_Name: =====UI=====
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1576318161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576318160}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1708282831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,3 +1526,4 @@ SceneRoots:
   - {fileID: 943475486}
   - {fileID: 58880943}
   - {fileID: 668414982}
+  - {fileID: 1576318161}

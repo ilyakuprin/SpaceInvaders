@@ -18,7 +18,7 @@ namespace _SpaceInvaders.Scripts.Enemy
             _leftWall = enemyView.LeftWall;
         }
 
-        public ReactiveCommand DetectedWall { get; } = new();
+        public ReactiveCommand Detected { get; } = new();
         
         public void Initialize()
             => DetectRightWall();
@@ -28,7 +28,7 @@ namespace _SpaceInvaders.Scripts.Enemy
             _rightWall.OnTriggerEnter2DAsObservable().Subscribe(other =>
             {
                 Dispose();
-                DetectedWall.Execute();
+                Detected.Execute();
                 DetectLeftWall();
             }).AddTo(_compositeDisposable);
         }
@@ -38,7 +38,7 @@ namespace _SpaceInvaders.Scripts.Enemy
             _leftWall.OnTriggerEnter2DAsObservable().Subscribe(other =>
             {
                 Dispose();
-                DetectedWall.Execute();
+                Detected.Execute();
                 DetectRightWall();
             }).AddTo(_compositeDisposable);
         }

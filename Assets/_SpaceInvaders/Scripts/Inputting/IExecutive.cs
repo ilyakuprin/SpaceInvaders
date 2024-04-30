@@ -1,4 +1,4 @@
-namespace _SpaceInvaders.Scripts.Inputing
+namespace _SpaceInvaders.Scripts.Inputting
 {
     public interface IExecutive
     {

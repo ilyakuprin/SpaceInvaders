@@ -1,12 +1,12 @@
 using System;
-using _SpaceInvaders.Scripts.Inputing;
+using _SpaceInvaders.Scripts.Inputting;
 using UniRx;
 using UnityEngine;
 using Zenject;
 
 namespace _SpaceInvaders.Scripts.MainHero
 {
-    public class Movement : IInitializable, IDisposable, IExecutive, IFixedTickable
+    public class MainHeroMovement : IInitializable, IDisposable, IExecutive, IFixedTickable
     {
         private readonly CompositeDisposable _compositeDisposable = new();
         private readonly Rigidbody2D _rigidbody;
@@ -16,7 +16,7 @@ namespace _SpaceInvaders.Scripts.MainHero
         private float _horizontalForce;
         private Vector2 _moveVelocity;
 
-        public Movement(MainHeroView mainHeroView,
+        public MainHeroMovement(MainHeroView mainHeroView,
                         MainHeroConfig mainHeroConfig,
                         PlayerInput input)
         {

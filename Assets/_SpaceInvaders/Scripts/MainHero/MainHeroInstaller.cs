@@ -1,8 +1,7 @@
-using _SpaceInvaders.Scripts.MainHero;
 using UnityEngine;
 using Zenject;
 
-namespace _SpaceInvaders.Scripts.Installers
+namespace _SpaceInvaders.Scripts.MainHero
 {
     public class MainHeroInstaller : MonoInstaller
     {
@@ -16,7 +15,10 @@ namespace _SpaceInvaders.Scripts.Installers
             Container.Bind<MainHeroView>().FromInstance(_mainHeroView).AsSingle();
             Container.Bind<MainHeroConfig>().FromInstance(_mainHeroConfig).AsSingle();
             
-            Container.BindInterfacesAndSelfTo<Movement>().AsSingle();
+            Container.BindInterfacesAndSelfTo<MainHeroMovement>().AsSingle();
+            Container.BindInterfacesAndSelfTo<Shooting>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SettingStartPositionBullet>().AsSingle();
+            Container.BindInterfacesAndSelfTo<BulletActivation>().AsSingle();
         }
     }
 }

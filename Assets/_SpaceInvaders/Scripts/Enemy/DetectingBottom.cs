@@ -21,7 +21,7 @@ namespace _SpaceInvaders.Scripts.Enemy
             _bottom.OnTriggerEnter2DAsObservable().Subscribe(other =>
             {
                 Dispose();
-                Debug.Log("Поражение полное");
+                Debug.Log("Поражение");
             }).AddTo(_compositeDisposable);
         }
 

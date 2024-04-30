@@ -1,7 +1,7 @@
 using _SpaceInvaders.Scripts.StringValues;
 using UnityEngine;
 
-namespace _SpaceInvaders.Scripts.Inputing
+namespace _SpaceInvaders.Scripts.Inputting
 {
     public class KeyboardInput : PlayerInput
     {

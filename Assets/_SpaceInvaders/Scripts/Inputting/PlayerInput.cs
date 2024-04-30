@@ -2,7 +2,7 @@ using System;
 using UniRx;
 using Zenject;
 
-namespace _SpaceInvaders.Scripts.Inputing
+namespace _SpaceInvaders.Scripts.Inputting
 {
     public abstract class PlayerInput : IInitializable, IDisposable
     {
@@ -11,16 +11,14 @@ namespace _SpaceInvaders.Scripts.Inputing
         public ReactiveCommand<InputData> ReactiveInput { get; } = new ();
 
         public void Initialize()
-        {
-            Observable.EveryUpdate().Subscribe(_ =>
-            {
-                ReactiveInput.Execute(GetInputData());
-            }).AddTo(_compositeDisposable);
-        }
+            => Observable.EveryUpdate().Subscribe(_ => Execute()).AddTo(_compositeDisposable);
 
         public void Dispose()
             => _compositeDisposable.Clear();
 
         protected abstract InputData GetInputData();
+
+        private void Execute()
+            => ReactiveInput.Execute(GetInputData());
     }
 }

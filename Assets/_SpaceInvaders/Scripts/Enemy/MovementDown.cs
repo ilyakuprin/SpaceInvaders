@@ -25,20 +25,21 @@ namespace _SpaceInvaders.Scripts.Enemy
         }
 
         public void Initialize()
-        {
-            _detectingWall.DetectedWall.Subscribe(_ =>
-            {
-                Observable.Timer(TimeSpan.FromSeconds(_enemyConfig.TimeStayInSec * Half)).Subscribe(_ =>
-                {
-                    _enemies.position += Vector3.down * _enemyConfig.OffsetMoveDown;
-                    _compositeDisposableTime.Clear();
-                }).AddTo(_compositeDisposableTime);
-            }).AddTo(_compositeDisposableDetect);
-        }
+            => _detectingWall.Detected.Subscribe(_ => WaitToMove()).AddTo(_compositeDisposableDetect);
 
         public void Dispose()
         {
             _compositeDisposableDetect.Clear();
+            _compositeDisposableTime.Clear();
+        }
+
+        private void WaitToMove()
+            => Observable.Timer(TimeSpan.FromSeconds(_enemyConfig.TimeStayInSec * Half)).Subscribe(_ => Move())
+                .AddTo(_compositeDisposableTime);
+
+        private void Move()
+        {
+            _enemies.position += Vector3.down * _enemyConfig.OffsetMoveDown;
             _compositeDisposableTime.Clear();
         }
     }

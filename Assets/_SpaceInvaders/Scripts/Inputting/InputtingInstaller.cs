@@ -1,8 +1,7 @@
 using System.Linq;
-using _SpaceInvaders.Scripts.Inputing;
 using Zenject;
 
-namespace _SpaceInvaders.Scripts.Installers
+namespace _SpaceInvaders.Scripts.Inputting
 {
     public class InputtingInstaller : MonoInstaller
     {
