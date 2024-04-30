@@ -15,8 +15,11 @@ namespace _SpaceInvaders.Scripts.Installers
             Container.Bind<EnemyConfig>().FromInstance(_enemyConfig).AsSingle();
 
             Container.BindInterfacesAndSelfTo<EnemyStorage>().AsSingle();
-            Container.BindInterfacesAndSelfTo<Movement>().AsSingle();
+            Container.BindInterfacesAndSelfTo<HorizontalMovement>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DetectingWall>().AsSingle();
+            Container.BindInterfacesAndSelfTo<MovementDown>().AsSingle();
             Container.BindInterfacesAndSelfTo<ChangingDirection>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DetectingBottom>().AsSingle();
         }
     }
 }

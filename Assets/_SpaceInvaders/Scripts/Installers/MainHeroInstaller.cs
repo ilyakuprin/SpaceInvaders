@@ -15,8 +15,7 @@ namespace _SpaceInvaders.Scripts.Installers
             Container.Bind<Camera>().FromInstance(_camera).AsSingle();
             Container.Bind<MainHeroView>().FromInstance(_mainHeroView).AsSingle();
             Container.Bind<MainHeroConfig>().FromInstance(_mainHeroConfig).AsSingle();
-
-            Container.BindInterfacesAndSelfTo<CalculationLimitsMovement>().AsSingle();
+            
             Container.BindInterfacesAndSelfTo<Movement>().AsSingle();
         }
     }

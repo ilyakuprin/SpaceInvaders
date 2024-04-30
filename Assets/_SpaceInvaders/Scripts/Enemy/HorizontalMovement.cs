@@ -5,22 +5,23 @@ using Zenject;
 
 namespace _SpaceInvaders.Scripts.Enemy
 {
-    public class Movement : IInitializable, IDisposable
+    public class HorizontalMovement : IInitializable, IDisposable
     {
         private readonly CompositeDisposable _compositeDisposable = new();
         private readonly Transform _enemies;
         private readonly EnemyConfig _enemyConfig;
-
-        private float _direction = 1f;
+        
+        private Vector3 _direction = Vector3.right;
  
-        public Movement(EnemyConfig enemyConfig,
-                        EnemyView enemyView)
+        public HorizontalMovement(EnemyConfig enemyConfig,
+                                  EnemyView enemyView)
         {
             _enemyConfig = enemyConfig;
             _enemies = enemyView.EnemyParent;
         }
         
-        public void ChangeDirection() => _direction *= -1f; 
+        public void ChangeDirection()
+            => _direction = -_direction; 
         
         public void Initialize()
             => StartTimer();
@@ -35,7 +36,7 @@ namespace _SpaceInvaders.Scripts.Enemy
 
         private void Move()
         {
-            _enemies.position += Vector3.right * _direction * _enemyConfig.OffsetMove;
+            _enemies.position += _direction * _enemyConfig.OffsetHorizontalMove;
             StartTimer();
         }
 
