@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _SpaceInvaders.Scripts.ScriptableObj
+namespace _SpaceInvaders.Scripts.Bullet
 {
     [CreateAssetMenu(fileName = "BulletConfig", menuName = "Configs/BulletConfig")]
     public class BulletConfig : ScriptableObject

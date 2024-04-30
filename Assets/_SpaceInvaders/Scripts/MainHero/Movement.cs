@@ -1,6 +1,5 @@
 using System;
 using _SpaceInvaders.Scripts.Inputing;
-using _SpaceInvaders.Scripts.ScriptableObj;
 using UniRx;
 using UnityEngine;
 using Zenject;

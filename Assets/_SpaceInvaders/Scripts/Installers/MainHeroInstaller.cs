@@ -1,5 +1,4 @@
 using _SpaceInvaders.Scripts.MainHero;
-using _SpaceInvaders.Scripts.ScriptableObj;
 using UnityEngine;
 using Zenject;
 

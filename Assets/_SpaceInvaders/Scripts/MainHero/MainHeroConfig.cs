@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _SpaceInvaders.Scripts.ScriptableObj
+namespace _SpaceInvaders.Scripts.MainHero
 {
     [CreateAssetMenu(fileName = "MainHeroConfig", menuName = "Configs/MainHeroConfig")]
     public class MainHeroConfig : ScriptableObject
