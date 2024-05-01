@@ -1,12 +1,13 @@
 using System;
 using _SpaceInvaders.Scripts.Inputting;
+using _SpaceInvaders.Scripts.Pause;
 using UniRx;
 using UnityEngine;
 using Zenject;
 
 namespace _SpaceInvaders.Scripts.MainHero
 {
-    public class MainHeroMovement : IInitializable, IDisposable, IExecutive, IFixedTickable
+    public class MainHeroMovement : IExecutive, IFixedTickable, IPausable
     {
         private readonly CompositeDisposable _compositeDisposable = new();
         private readonly Rigidbody2D _rigidbody;
@@ -29,7 +30,10 @@ namespace _SpaceInvaders.Scripts.MainHero
             => _input.ReactiveInput.Subscribe(Execute).AddTo(_compositeDisposable);
 
         public void Dispose()
-            => _compositeDisposable.Clear();
+        {
+            _moveVelocity = Vector2.zero;
+            _compositeDisposable.Clear();
+        }
 
         public void Execute(InputData inputData)
             => _moveVelocity = inputData.Direction.normalized * _speed;

@@ -1,11 +1,11 @@
 using System;
+using _SpaceInvaders.Scripts.Pause;
 using UniRx;
 using UnityEngine;
-using Zenject;
 
 namespace _SpaceInvaders.Scripts.Enemy
 {
-    public class HorizontalMovement : IInitializable, IDisposable
+    public class HorizontalMovement : IPausable
     {
         private readonly CompositeDisposable _compositeDisposable = new();
         private readonly Transform _enemies;

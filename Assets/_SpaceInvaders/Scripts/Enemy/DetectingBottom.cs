@@ -15,13 +15,15 @@ namespace _SpaceInvaders.Scripts.Enemy
         {
             _bottom = enemyView.Bottom;
         }
+
+        public ReactiveCommand Lost = new();
         
         public void Initialize()
         {
             _bottom.OnTriggerEnter2DAsObservable().Subscribe(other =>
             {
                 Dispose();
-                Debug.Log("Поражение");
+                Lost.Execute();
             }).AddTo(_compositeDisposable);
         }
 

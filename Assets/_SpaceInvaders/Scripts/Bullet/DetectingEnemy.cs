@@ -36,7 +36,12 @@ namespace _SpaceInvaders.Scripts.Bullet
             => _compositeDisposableDetecting.Clear();
 
         private void StartDetect()
-            => _collider.OnTriggerEnter2DAsObservable().Subscribe(Detect).AddTo(_compositeDisposableDetecting);
+        {
+            if (_compositeDisposableDetecting.Count == 0)
+            {
+                _collider.OnTriggerEnter2DAsObservable().Subscribe(Detect).AddTo(_compositeDisposableDetecting);
+            }
+        }
 
         private void Detect(Collider2D enemy)
         {

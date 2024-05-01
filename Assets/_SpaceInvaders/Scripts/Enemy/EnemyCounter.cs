@@ -1,7 +1,6 @@
 using System;
 using _SpaceInvaders.Scripts.Bullet;
 using UniRx;
-using UnityEngine;
 using Zenject;
 
 namespace _SpaceInvaders.Scripts.Enemy
@@ -21,6 +20,8 @@ namespace _SpaceInvaders.Scripts.Enemy
             _detectingEnemy = detectingEnemy;
         }
 
+        public ReactiveCommand Won { get; } = new();
+
         public void Initialize()
         {
             _totalCount = _enemyConfig.NumberColumns * _enemyConfig.EnemiesInColumn.childCount;
@@ -37,7 +38,7 @@ namespace _SpaceInvaders.Scripts.Enemy
 
             if (_totalCount <= 0)
             {
-                Debug.Log("Победа");
+                Won.Execute();
             }
         }
     }

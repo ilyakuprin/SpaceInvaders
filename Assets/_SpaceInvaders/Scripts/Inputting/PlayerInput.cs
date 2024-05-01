@@ -1,10 +1,9 @@
-using System;
+using _SpaceInvaders.Scripts.Pause;
 using UniRx;
-using Zenject;
 
 namespace _SpaceInvaders.Scripts.Inputting
 {
-    public abstract class PlayerInput : IInitializable, IDisposable
+    public abstract class PlayerInput : IPausable
     {
         private readonly CompositeDisposable _compositeDisposable = new();
         
