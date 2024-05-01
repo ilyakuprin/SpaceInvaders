@@ -21,6 +21,9 @@ namespace _SpaceInvaders.Scripts.Enemy
             Container.BindInterfacesAndSelfTo<DetectingBottom>().AsSingle();
             Container.BindInterfacesAndSelfTo<HidingEnemy>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemyCounter>().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<SearchingShootingEnemies>().AsSingle();
+            Container.BindInterfacesAndSelfTo<Shooting>().AsSingle();
         }
     }
 }

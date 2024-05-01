@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _SpaceInvaders.Scripts.Bullet
+namespace _SpaceInvaders.Scripts.MainHero.Bullet
 {
     public class BulletView : MonoBehaviour
     {

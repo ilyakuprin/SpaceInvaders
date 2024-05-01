@@ -1,5 +1,5 @@
 using System;
-using _SpaceInvaders.Scripts.Bullet;
+using _SpaceInvaders.Scripts.MainHero.Bullet;
 using _SpaceInvaders.Scripts.StringValues;
 using UniRx;
 using UnityEngine;

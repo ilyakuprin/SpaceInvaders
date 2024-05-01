@@ -1,3 +1,4 @@
+using _SpaceInvaders.Scripts.MainHero.Bullet;
 using UnityEngine;
 using Zenject;
 
@@ -19,6 +20,7 @@ namespace _SpaceInvaders.Scripts.MainHero
             Container.BindInterfacesAndSelfTo<Shooting>().AsSingle();
             Container.BindInterfacesAndSelfTo<SettingStartPositionBullet>().AsSingle();
             Container.BindInterfacesAndSelfTo<BulletActivation>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DetectingBullet>().AsSingle();
         }
     }
 }

@@ -3,7 +3,7 @@ using UniRx;
 using UnityEngine;
 using Zenject;
 
-namespace _SpaceInvaders.Scripts.Bullet
+namespace _SpaceInvaders.Scripts.MainHero.Bullet
 {
     public class HidingBullet : IInitializable, IDisposable
     {

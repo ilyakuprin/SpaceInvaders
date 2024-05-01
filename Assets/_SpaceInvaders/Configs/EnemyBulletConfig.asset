@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c04f7a865bfb44cb90d514dd4e911889, type: 3}
-  m_Name: BulletConfig
+  m_Script: {fileID: 11500000, guid: 1aa9fb2dd8fb4c80bbe6e4209b8e6784, type: 3}
+  m_Name: EnemyBulletConfig
   m_EditorClassIdentifier: 
   <Speed>k__BackingField: 6.16

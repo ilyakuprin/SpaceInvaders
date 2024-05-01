@@ -17,3 +17,5 @@ MonoBehaviour:
   <OffsetHorizontalMove>k__BackingField: 0.8
   <OffsetMoveDown>k__BackingField: 0.5
   <TimeStayInSec>k__BackingField: 0.8
+  <MinShotTimeInSec>k__BackingField: 0.7
+  <MaxShotTimeInSec>k__BackingField: 2

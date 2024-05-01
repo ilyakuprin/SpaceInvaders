@@ -1,10 +1,9 @@
 using System;
-using _SpaceInvaders.Scripts.Bullet;
 using UniRx;
 using UnityEngine;
 using Zenject;
 
-namespace _SpaceInvaders.Scripts.MainHero
+namespace _SpaceInvaders.Scripts.MainHero.Bullet
 {
     public class BulletActivation : IInitializable, IDisposable
     {

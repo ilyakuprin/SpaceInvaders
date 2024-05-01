@@ -1,6 +1,6 @@
 using System;
-using _SpaceInvaders.Scripts.Bullet;
 using _SpaceInvaders.Scripts.Inputting;
+using _SpaceInvaders.Scripts.MainHero.Bullet;
 using UniRx;
 using UnityEngine;
 using Zenject;

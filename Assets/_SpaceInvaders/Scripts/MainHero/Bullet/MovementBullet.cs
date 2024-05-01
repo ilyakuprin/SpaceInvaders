@@ -2,7 +2,7 @@ using _SpaceInvaders.Scripts.Pause;
 using UnityEngine;
 using Zenject;
 
-namespace _SpaceInvaders.Scripts.Bullet
+namespace _SpaceInvaders.Scripts.MainHero.Bullet
 {
     public class MovementBullet : IFixedTickable, IPausable
     {
@@ -12,7 +12,7 @@ namespace _SpaceInvaders.Scripts.Bullet
         private bool _isPause;
 
         public MovementBullet(BulletView bulletView,
-                        BulletConfig bulletConfig)
+                              BulletConfig bulletConfig)
         {
             _rigidbody = bulletView.Rigidbody;
             _speed = bulletConfig.Speed;

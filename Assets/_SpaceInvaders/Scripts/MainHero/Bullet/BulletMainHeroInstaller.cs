@@ -1,9 +1,9 @@
 using UnityEngine;
 using Zenject;
 
-namespace _SpaceInvaders.Scripts.Bullet
+namespace _SpaceInvaders.Scripts.MainHero.Bullet
 {
-    public class BulletInstaller : MonoInstaller
+    public class BulletMainHeroInstaller : MonoInstaller
     {
         [SerializeField] private BulletView _bulletView;
         [SerializeField] private BulletConfig _bulletConfig;

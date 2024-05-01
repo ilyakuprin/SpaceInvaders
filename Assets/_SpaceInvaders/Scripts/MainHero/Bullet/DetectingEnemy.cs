@@ -1,11 +1,10 @@
 using System;
-using _SpaceInvaders.Scripts.MainHero;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
 using Zenject;
 
-namespace _SpaceInvaders.Scripts.Bullet
+namespace _SpaceInvaders.Scripts.MainHero.Bullet
 {
     public class DetectingEnemy : IInitializable, IDisposable
     {
