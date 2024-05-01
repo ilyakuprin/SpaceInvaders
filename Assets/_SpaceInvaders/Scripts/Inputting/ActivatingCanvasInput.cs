@@ -1,6 +1,8 @@
+using Zenject;
+
 namespace _SpaceInvaders.Scripts.Inputting
 {
-    public class ActivatingCanvasInput
+    public class ActivatingCanvasInput : IInitializable
     {
         private readonly CanvasInputView _canvasInputView;
 

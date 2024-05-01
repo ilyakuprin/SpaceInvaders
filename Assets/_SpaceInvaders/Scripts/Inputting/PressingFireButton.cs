@@ -19,13 +19,13 @@ namespace _SpaceInvaders.Scripts.Inputting
 
         public void Initialize()
         {
-            Observable.EveryUpdate().Subscribe(_ =>
+            _button.OnClickAsObservable().Subscribe(_ => IsFire = true).AddTo(_compositeDisposable);
+            
+            Observable.EveryLateUpdate().Subscribe(_ =>
             {
                 if (IsFire)
                     IsFire = false;
             }).AddTo(_compositeDisposable);
-            
-            _button.OnClickAsObservable().Subscribe(_ => IsFire = true).AddTo(_compositeDisposable);
         }
 
         public void Dispose()
